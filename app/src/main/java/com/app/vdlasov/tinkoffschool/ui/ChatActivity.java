@@ -3,14 +3,12 @@ package com.app.vdlasov.tinkoffschool.ui;
 import com.app.vdlasov.tinkoffschool.R;
 import com.app.vdlasov.tinkoffschool.ui.adapter.ChatAdapter;
 import com.app.vdlasov.tinkoffschool.ui.common.OnItemClickListener;
-import com.app.vdlasov.tinkoffschool.ui.model.MessageItem;
+import com.app.vdlasov.tinkoffschool.ui.model.MessageUiItem;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -43,14 +41,14 @@ public class ChatActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
-    private List<MessageItem> createDataset() {
-        List<MessageItem> list = new ArrayList<>();
-        list.add(new MessageItem("Nicholas", "message1", "30/03/17", R.layout.item_chat_left_message));
-        list.add(new MessageItem("Nicholas", "message2", "30/03/17", R.layout.item_chat_left_message));
-        list.add(new MessageItem("Mike", "message3", "30/03/17", R.layout.item_chat_right_message));
-        list.add(new MessageItem("Mike", "message4", "30/03/17", R.layout.item_chat_right_message));
-        list.add(new MessageItem("Mike", "message5", "30/03/17", R.layout.item_chat_right_message));
-        list.add(new MessageItem("Nicholas", "message6", "30/03/17", R.layout.item_chat_left_message));
+    private List<MessageUiItem> createDataset() {
+        List<MessageUiItem> list = new ArrayList<>();
+        list.add(new MessageUiItem("Nicholas", "message1", "30/03/17", R.layout.item_chat_left_message));
+        list.add(new MessageUiItem("Nicholas", "message2", "30/03/17", R.layout.item_chat_left_message));
+        list.add(new MessageUiItem("Mike", "message3", "30/03/17", R.layout.item_chat_right_message));
+        list.add(new MessageUiItem("Mike", "message4", "30/03/17", R.layout.item_chat_right_message));
+        list.add(new MessageUiItem("Mike", "message5", "30/03/17", R.layout.item_chat_right_message));
+        list.add(new MessageUiItem("Nicholas", "message6", "30/03/17", R.layout.item_chat_left_message));
         return list;
     }
 }

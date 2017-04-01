@@ -2,7 +2,7 @@ package com.app.vdlasov.tinkoffschool.ui.adapter;
 
 import com.app.vdlasov.tinkoffschool.R;
 import com.app.vdlasov.tinkoffschool.ui.common.OnItemClickListener;
-import com.app.vdlasov.tinkoffschool.ui.model.MessageItem;
+import com.app.vdlasov.tinkoffschool.ui.model.MessageUiItem;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,10 +18,10 @@ import java.util.List;
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
 
-    private List<MessageItem> dataSet;
+    private List<MessageUiItem> dataSet;
     private OnItemClickListener clickListener;
 
-    public ChatAdapter(final List<MessageItem> dataSet, final OnItemClickListener clickListener) {
+    public ChatAdapter(final List<MessageUiItem> dataSet, final OnItemClickListener clickListener) {
         this.dataSet = dataSet;
         this.clickListener = clickListener;
     }

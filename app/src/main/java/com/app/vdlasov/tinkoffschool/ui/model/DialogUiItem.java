@@ -1,11 +1,11 @@
 package com.app.vdlasov.tinkoffschool.ui.model;
 
-public class DialogItem {
+public class DialogUiItem {
 
     private String title;
     private String desc;
 
-    public DialogItem(String title, String desc) {
+    public DialogUiItem(String title, String desc) {
         this.title = title;
         this.desc = desc;
     }

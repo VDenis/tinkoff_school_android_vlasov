@@ -3,7 +3,7 @@ package com.app.vdlasov.tinkoffschool.ui;
 import com.app.vdlasov.tinkoffschool.R;
 import com.app.vdlasov.tinkoffschool.ui.adapter.DialogsAdapter;
 import com.app.vdlasov.tinkoffschool.ui.common.OnItemClickListener;
-import com.app.vdlasov.tinkoffschool.ui.model.DialogItem;
+import com.app.vdlasov.tinkoffschool.ui.model.DialogUiItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,14 +46,14 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.addItemDecoration(dividerItemDecoration);
     }
 
-    private List<DialogItem> createDataset() {
-        List<DialogItem> list = new ArrayList<>();
-        list.add(new DialogItem("title", "desc"));
-        list.add(new DialogItem("title", "desc"));
-        list.add(new DialogItem("title", "desc"));
-        list.add(new DialogItem("title", "desc"));
-        list.add(new DialogItem("title", "desc"));
-        list.add(new DialogItem("title", "desc"));
+    private List<DialogUiItem> createDataset() {
+        List<DialogUiItem> list = new ArrayList<>();
+        list.add(new DialogUiItem("title1", "desc"));
+        list.add(new DialogUiItem("title2", "desc"));
+        list.add(new DialogUiItem("title3", "desc"));
+        list.add(new DialogUiItem("title4", "desc"));
+        list.add(new DialogUiItem("title5", "desc"));
+        list.add(new DialogUiItem("title6", "desc"));
         return list;
     }
 
