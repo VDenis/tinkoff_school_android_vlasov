@@ -8,41 +8,59 @@ import com.app.vdlasov.tinkoffschool.ui.model.DialogUiItem;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class DialogFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        initRecyclerView();
+    public static DialogFragment newInstance() {
+        DialogFragment fragment = new DialogFragment();
+        Bundle args = new Bundle();
+        fragment.setArguments(args);
+        return fragment;
     }
 
-    private void initRecyclerView() {
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view_dialogs);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+        }
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_dialog, container, false);
+
+        initRecyclerView(view);
+        return view;
+    }
+
+    private void initRecyclerView(View view) {
+        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view_dialogs);
         recyclerView.setHasFixedSize(true);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         adapter = new DialogsAdapter(createDataset(), new OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                Toast.makeText(MainActivity.this, "position = " + position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "position = " + position, Toast.LENGTH_SHORT).show();
                 startNextScreen();
             }
         });
         recyclerView.setAdapter(adapter);
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, layoutManager.getOrientation());
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(getContext(), layoutManager.getOrientation());
         recyclerView.addItemDecoration(dividerItemDecoration);
     }
 
@@ -58,7 +76,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startNextScreen() {
-        Intent intent = new Intent(this, ChatActivity.class);
-        startActivity(intent);
+        Activity activity = getActivity();
+        if (activity != null) {
+            Intent intent = new Intent(activity, ChatActivity.class);
+            startActivity(intent);
+        }
     }
 }
