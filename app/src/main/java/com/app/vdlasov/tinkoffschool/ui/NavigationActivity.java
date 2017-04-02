@@ -48,7 +48,6 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
                 addFragment(dialogsFragment);
                 break;
             case R.id.nav_settings:
-                //StubFragment settingsFragment = StubFragment.newInstance("Настройки");
                 SettingsFragment settingsFragment = SettingsFragment.newInstance();
                 addFragment(settingsFragment);
                 break;
