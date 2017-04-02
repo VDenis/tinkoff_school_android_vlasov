@@ -6,11 +6,12 @@
     android:gravity="start|center_vertical"
     android:orientation="vertical">
 
+    <!-- android:background="@android:color/holo_green_light" -->
     <TextView
         android:id="@+id/tv_chat_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_green_light"
+        android:background="@drawable/layout_bg"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:paddingTop="8dp"

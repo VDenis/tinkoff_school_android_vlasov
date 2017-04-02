@@ -3,6 +3,8 @@ package com.app.vdlasov.tinkoffschool.ui;
 import com.app.vdlasov.tinkoffschool.R;
 import com.app.vdlasov.tinkoffschool.utils.Credentials;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -17,6 +19,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+
+import static com.app.vdlasov.tinkoffschool.ui.LoginActivity.logoutAndNavigateToLoginActivity;
 
 /**
  * Created by Denis on 01.04.2017.
@@ -45,7 +49,8 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
                 addFragment(dialogsFragment);
                 break;
             case R.id.nav_settings:
-                StubFragment settingsFragment = StubFragment.newInstance("Настройки");
+                //StubFragment settingsFragment = StubFragment.newInstance("Настройки");
+                SettingsFragment settingsFragment = SettingsFragment.newInstance();
                 addFragment(settingsFragment);
                 break;
             case R.id.nav_about:
@@ -54,6 +59,9 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
                 break;
             case R.id.nav_exit:
                 finish();
+                break;
+            case R.id.nav_logout:
+                logoutAndNavigateToLoginActivity(NavigationActivity.this);
                 break;
         }
 
@@ -101,4 +109,5 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
         fragmentTransaction = fragmentTransaction.replace(R.id.content_navigation, fragment);
         fragmentTransaction.commit();
     }
+
 }

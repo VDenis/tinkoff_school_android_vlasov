@@ -3,6 +3,8 @@ package com.app.vdlasov.tinkoffschool.ui;
 import com.app.vdlasov.tinkoffschool.R;
 import com.app.vdlasov.tinkoffschool.utils.Credentials;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -47,6 +49,13 @@ public class LoginActivity extends AppCompatActivity {
         //Intent intent = new Intent(this, MainActivity.class);
         //intent.putExtra("LOGIN", login.getText().toString());
         startActivity(intent);
+    }
+
+    public static void logoutAndNavigateToLoginActivity(Activity context) {
+        Credentials.logoutUser(context);
+        Intent intent = new Intent(context, LoginActivity.class);
+        context.startActivity(intent);
+        context.finish();
     }
 }
 

@@ -15,6 +15,10 @@ public class Credentials {
 
     private static final String KEY_CREDENTIALS_PASS = "KEY_CREDENTIALS_PASS";
 
+    public static SharedPreferences getPreferences(Context context) {
+        return context.getSharedPreferences(PREF_LOGIN, Context.MODE_PRIVATE);
+    }
+
     public static boolean isUserLogin(Context context) {
         SharedPreferences preferences = context.getSharedPreferences(PREF_LOGIN, Context.MODE_PRIVATE);
         if (preferences.contains(KEY_CREDENTIALS_LOGIN)) {
@@ -37,7 +41,7 @@ public class Credentials {
         editor.apply();
     }
 
-    public static void logoutUser(Context context, String login) {
+    public static void logoutUser(Context context) {
         SharedPreferences preferences = context.getSharedPreferences(PREF_LOGIN, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.clear();

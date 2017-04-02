@@ -3,6 +3,7 @@ package com.app.vdlasov.tinkoffschool.ui;
 import com.app.vdlasov.tinkoffschool.R;
 import com.app.vdlasov.tinkoffschool.ui.adapter.ChatAdapter;
 import com.app.vdlasov.tinkoffschool.ui.common.OnItemClickListener;
+import com.app.vdlasov.tinkoffschool.ui.common.SpacesItemDecoration;
 import com.app.vdlasov.tinkoffschool.ui.model.MessageUiItem;
 
 import android.support.v7.app.AppCompatActivity;
@@ -28,7 +29,7 @@ public class ChatActivity extends AppCompatActivity {
 
     private void initRecyclerView() {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view_chat);
-        //recyclerView.hasFixedSize();
+        recyclerView.hasFixedSize();
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setReverseLayout(true);
         recyclerView.setLayoutManager(layoutManager);
@@ -39,6 +40,8 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
         recyclerView.setAdapter(adapter);
+        SpacesItemDecoration dividerItemDecoration = new SpacesItemDecoration(16);
+        recyclerView.addItemDecoration(dividerItemDecoration);
     }
 
     private List<MessageUiItem> createDataset() {
