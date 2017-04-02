@@ -3,8 +3,6 @@ package com.app.vdlasov.tinkoffschool.ui;
 import com.app.vdlasov.tinkoffschool.R;
 import com.app.vdlasov.tinkoffschool.utils.Credentials;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -29,6 +27,7 @@ import static com.app.vdlasov.tinkoffschool.ui.LoginActivity.logoutAndNavigateTo
 public class NavigationActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private final static int MENU_DIALOGS = 0;
+
     private ActionBarDrawerToggle toggle;
 
     @Override
@@ -89,7 +88,7 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
         String userLogin = Credentials.getUserLogin(NavigationActivity.this);
 
         View header = navigationView.getHeaderView(0);
-        TextView tv = (TextView)header.findViewById(R.id.textView);
+        TextView tv = (TextView) header.findViewById(R.id.textView);
         tv.setText(userLogin);
 
         if (savedInstanceState == null) {
@@ -106,6 +105,7 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
 
     private void addFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
         fragmentTransaction = fragmentTransaction.replace(R.id.content_navigation, fragment);
         fragmentTransaction.commit();
     }

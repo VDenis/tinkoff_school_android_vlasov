@@ -9,6 +9,7 @@ import android.view.View;
  */
 
 public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
+
     private int space;
 
     public SpacesItemDecoration(int space) {
@@ -24,7 +25,8 @@ public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
         outRect.bottom = space;
 
         // Add top margin only for the first item to avoid double space between items
-        if(parent.getChildAdapterPosition(view) == 0)
+        if (parent.getChildAdapterPosition(view) == 0) {
             outRect.top = space;
+        }
     }
 }

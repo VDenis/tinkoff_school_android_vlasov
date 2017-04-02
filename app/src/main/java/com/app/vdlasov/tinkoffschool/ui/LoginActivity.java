@@ -4,7 +4,6 @@ import com.app.vdlasov.tinkoffschool.R;
 import com.app.vdlasov.tinkoffschool.utils.Credentials;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

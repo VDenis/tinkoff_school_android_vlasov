@@ -6,8 +6,8 @@ import com.app.vdlasov.tinkoffschool.ui.common.OnItemClickListener;
 import com.app.vdlasov.tinkoffschool.ui.common.SpacesItemDecoration;
 import com.app.vdlasov.tinkoffschool.ui.model.MessageUiItem;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
@@ -18,6 +18,7 @@ import java.util.List;
 public class ChatActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
+
     private RecyclerView.Adapter adapter;
 
     protected void onCreate(Bundle savedInstanceState) {

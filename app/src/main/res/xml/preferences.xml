@@ -3,9 +3,10 @@
 
     <PreferenceCategory android:title="@string/account_preferences">
 
-        <Preference android:title="Logout"
+        <Preference
+            android:title="Logout"
             android:key="@string/logout_button_preference"
-            android:summary="Logout from the current account"/>
+            android:summary="Logout from the current account" />
 
     </PreferenceCategory>
 </PreferenceScreen>

@@ -1,7 +1,7 @@
 package com.app.vdlasov.tinkoffschool.ui.adapter;
 
-import com.app.vdlasov.tinkoffschool.ui.common.OnItemClickListener;
 import com.app.vdlasov.tinkoffschool.R;
+import com.app.vdlasov.tinkoffschool.ui.common.OnItemClickListener;
 import com.app.vdlasov.tinkoffschool.ui.model.DialogUiItem;
 
 import android.support.v7.widget.RecyclerView;
@@ -15,6 +15,7 @@ import java.util.List;
 public class DialogsAdapter extends RecyclerView.Adapter<DialogsAdapter.ViewHolder> {
 
     private List<DialogUiItem> dataset;
+
     private OnItemClickListener clickListener;
 
     public DialogsAdapter(List<DialogUiItem> dataset, OnItemClickListener clickListener) {
@@ -42,6 +43,7 @@ public class DialogsAdapter extends RecyclerView.Adapter<DialogsAdapter.ViewHold
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView title;
+
         public TextView desc;
 
         public ViewHolder(View view, OnItemClickListener listener) {

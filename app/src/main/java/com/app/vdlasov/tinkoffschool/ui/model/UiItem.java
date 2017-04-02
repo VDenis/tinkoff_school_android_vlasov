@@ -5,5 +5,6 @@ package com.app.vdlasov.tinkoffschool.ui.model;
  */
 
 interface UiItem {
+
     int getLayoutId();
 }

@@ -5,13 +5,10 @@ import com.app.vdlasov.tinkoffschool.ui.adapter.DialogsAdapter;
 import com.app.vdlasov.tinkoffschool.ui.common.OnItemClickListener;
 import com.app.vdlasov.tinkoffschool.ui.model.DialogUiItem;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,9 +17,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DialogFragment extends Fragment {
 
     private RecyclerView recyclerView;
+
     private RecyclerView.Adapter adapter;
 
     public static DialogFragment newInstance() {
@@ -60,7 +61,8 @@ public class DialogFragment extends Fragment {
             }
         });
         recyclerView.setAdapter(adapter);
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(getContext(), layoutManager.getOrientation());
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(getContext(),
+                layoutManager.getOrientation());
         recyclerView.addItemDecoration(dividerItemDecoration);
     }
 

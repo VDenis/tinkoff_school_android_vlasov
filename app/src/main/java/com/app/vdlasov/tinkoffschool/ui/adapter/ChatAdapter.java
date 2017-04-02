@@ -19,6 +19,7 @@ import java.util.List;
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
 
     private List<MessageUiItem> dataSet;
+
     private OnItemClickListener clickListener;
 
     public ChatAdapter(final List<MessageUiItem> dataSet, final OnItemClickListener clickListener) {

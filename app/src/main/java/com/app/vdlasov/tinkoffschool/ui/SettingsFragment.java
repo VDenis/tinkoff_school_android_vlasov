@@ -1,11 +1,8 @@
 package com.app.vdlasov.tinkoffschool.ui;
 
 import com.app.vdlasov.tinkoffschool.R;
-import com.app.vdlasov.tinkoffschool.utils.Credentials;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
 
