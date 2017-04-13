@@ -45,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void startNextScreen() {
         Intent intent = new Intent(this, NavigationActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         //Intent intent = new Intent(this, MainActivity.class);
         //intent.putExtra("LOGIN", login.getText().toString());
         startActivity(intent);
@@ -53,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
     public static void logoutAndNavigateToLoginActivity(Activity context) {
         Credentials.logoutUser(context);
         Intent intent = new Intent(context, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         context.startActivity(intent);
         context.finish();
     }

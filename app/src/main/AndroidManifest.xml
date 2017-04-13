@@ -14,8 +14,7 @@
         <!-- android:roundIcon="@mipmap/ic_launcher_round" -->
 
         <activity
-            android:name=".ui.LoginActivity"
-            android:noHistory="true">
+            android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
