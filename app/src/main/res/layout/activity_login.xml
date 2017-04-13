@@ -29,10 +29,16 @@
         android:maxLines="1"
         android:singleLine="true" />
 
-    <Button
+<!--    <Button
         android:id="@+id/btn_enter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="@string/enter" />
+        android:text="@string/enter" />-->
+
+    <com.app.vdlasov.tinkoffschool.ui.widgets.ProgressButton
+        android:id="@+id/btn_enter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp" />
 </LinearLayout>
